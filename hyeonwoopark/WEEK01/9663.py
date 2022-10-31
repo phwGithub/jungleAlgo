@@ -1,3 +1,5 @@
+# 백준 9663 N-Queen
+
 nQueenCnt = 0
 n = int(input())
 board = [-1 for i in range(n)]
