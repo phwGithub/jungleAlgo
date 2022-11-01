@@ -1,3 +1,4 @@
+
 import sys
 input = sys.stdin.readline
 
@@ -8,25 +9,28 @@ input = sys.stdin.readline
 # 소수 판별법? 
 # 주어진 숫자를 반으로 나눈다음에 num/2까지 for문 돌리면서 검사한다 
 
-## TODO : 추후 고칠 것!! 
 
 n = int(input())
 data = list(map(int, input().split())) # 판별할 숫자 list 
-finalcount = 0
+finalcount = 0  # 소수 개수
 
 for numData in data : # numData = 판별할 숫자 
+    # 1 처리 (소수가 아님)
+    if numData == 1 : 
+        continue
     keynum = int(numData/2)
-    flag = 0
-    for count in range(2, keynum) : # 2 부터 keynum 까지 나눠지는지 본다
-        print(count, numData)
+    flag = 0    
+    for count in range(2, keynum + 1) : # 2 부터 keynum 까지 나눠지는지 본다
         if numData % count == 0 : 
             # 인수 있음, 소수 아님 
+            flag = 1    #flag 변경
             break
-        else : # 인수 없음, 소수
-            finalcount += 1
-            
-    print(finalcount)
         
-        # print()
+    # keynum 까지 인수 판별 끝
+    if flag == 0 : 
+        # flag 변화 없음, 소수임
+        # 소수 개수 변수에 하나 더하기
+        finalcount += 1     
+        
 print(finalcount)
     
