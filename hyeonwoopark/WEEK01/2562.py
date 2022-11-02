@@ -5,13 +5,11 @@ num_list = []
 for i in range(9):
     num_list.append(int(input()))
 
-max = -1
-idx = -1
+max_num = -1
 
-for index, num in enumerate(num_list):
-    if(num > max):
-        max = num
-        idx = index
+for num in num_list:
+    if num > max_num:
+        max_num = num
 
-print(max)
-print(idx + 1)
+print(max_num)
+print(num_list.index(max(num_list)) + 1)
