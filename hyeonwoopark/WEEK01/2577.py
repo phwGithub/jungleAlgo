@@ -6,10 +6,7 @@ c = int(input())
 
 mul = a * b * c
 
-digits = [0 for i in range(10)]
+digit_list = list(str(mul))
 
-for digit in str(mul):
-    digits[int(digit)] += 1
-
-for digit in digits:
-    print(digit)
+for i in range(10):
+    print(digit_list.count(str(i)))
